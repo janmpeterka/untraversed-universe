@@ -20,5 +20,9 @@ def utility_processor():
     )
 
 
-# @application.before_request
-# def load_or_create_user(self):
+@application.before_first_request
+def fill_database():
+    from app.models.qualities import Quality
+
+    print("Doing this only one time! ")
+    Quality.fill_database()

@@ -18,7 +18,7 @@ class HelperFlaskView(FlaskView):
         self.player = Player.load_first()
 
         if not self.player:
-            if not self.index:
+            if not getattr(self, "is_index", False):
                 return redirect(url_for("IndexView:index"))
 
     def validate_operation(self, object_id, instance):

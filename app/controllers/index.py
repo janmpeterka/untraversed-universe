@@ -12,7 +12,7 @@ class IndexView(HelperFlaskView):
     route_base = "/"
 
     def before_request(self, name, *args, **kwargs):
-        self.index = True
+        self.is_index = True
         super().before_request(self)
 
     def index(self):
@@ -26,7 +26,9 @@ class IndexView(HelperFlaskView):
         if "background" in request.form:
 
             if request.form["background"] == "law":
-                self.player.add_quality(Quality.load_by_category_and_name("Background", "Running from law"))
+                self.player.add_quality(
+                    Quality.load_by_category_and_name("Background", "Running from law")
+                )
                 self.player.save()
 
-            return redirect(url_for("IndexView:index"))
+        return redirect(url_for("IndexView:index"))

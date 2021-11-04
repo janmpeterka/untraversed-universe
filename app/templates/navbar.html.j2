@@ -1,0 +1,7 @@
+<div id="navbar" class="container mt-3" style="background-color: gray;">
+    <a href="{{ url_for('PlayerView:index') }}" class="ms-2 me-2 {% if not player %}visibility-hidden{% endif %}"> you </a>
+
+    | 
+    
+    <a href="{{ url_for('ShipView:index') }}" class="ms-2 me-2 {% if not player.ship %}visibility-hidden{% endif %}"> ship </a>
+</div>

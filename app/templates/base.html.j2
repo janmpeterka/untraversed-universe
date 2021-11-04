@@ -44,10 +44,7 @@
 {% endblock head %}
 </head>
 <body>
-    <div id="navbar" class="container mt-3" style="background-color: gray;">
-        {# <a href="{{ url_for('PlayerView:index') }}"> you </a> #}
-        <a href="{{ url_for('ShipView:index') }}"> ship </a>
-    </div>
+    {% include('navbar.html.j2') %}
 
 {#     {% block flashing %}
         {% include('base/_flashing.html.j2') %}

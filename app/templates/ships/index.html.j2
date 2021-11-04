@@ -1,11 +1,42 @@
 {% extends "base.html.j2" %}
-{% block title %} Beginnings {% endblock %}
+{% block title %} On the ship {% endblock %}
 
 {% block content %}
-{% if not player.ship %}
+
+<div class="text-center">
 	
-{% endif %}
-Your ship awaits..
+	{% if not player.ship %}
+
+		choose your ship:
+
+		<form action="{{ url_for('ShipView:choose_ship') }}" method="POST" >
+			<select name="ship">
+				<option name="Flea"> Flea </option>
+				<option name="Bumblebee"> Bumblebee </option>
+				<option name="Moth"> Moth </option>
+				<option name="Wasp"> Wasp </option>
+			</select>
+			<button type="submit"> I want this! </button>
+		</form>
+
+	{% else %}
+		<h2> {{ player.ship }} </h2>
+
+		<hr>
+
+		<div>
+			<h3>Stats:</h3>
+			
+			Sensors: 2 		<br>
+			Firepower: 1 	<br>
+			Durability: 3 	<br>
+			Accomodation: 5 <br>
+			
+		</div>
+	{% endif %}
+
+</div>
+	
 {% endblock %}
 
 

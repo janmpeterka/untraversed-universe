@@ -22,6 +22,7 @@ def upgrade():
         "qualities",
         sa.Column("id", sa.Integer(), autoincrement=True, nullable=False),
         sa.Column("name", sa.String(length=255), nullable=False),
+        sa.Column("category", sa.String(length=255), nullable=False),
         sa.PrimaryKeyConstraint("id"),
     )
     op.create_table(

@@ -1,0 +1,25 @@
+{% extends "base.html.j2" %}
+{% block title %} You {% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+		<h2> {{ player.name }} </h2>
+
+		<hr>
+
+		<div>
+			<h3> Qualities: </h3>
+
+			{% for quality in player.qualities %}
+				{{ quality.category }}: {{ quality.name }} <br>
+			{% endfor %}
+
+			
+		</div>
+
+</div>
+	
+{% endblock %}
+
+
