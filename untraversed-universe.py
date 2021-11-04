@@ -18,3 +18,7 @@ def utility_processor():
     return dict(
         link_to=link_to,
     )
+
+
+# @application.before_request
+# def load_or_create_user(self):

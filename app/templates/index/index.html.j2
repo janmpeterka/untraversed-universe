@@ -1,0 +1,38 @@
+{% extends "base.html.j2" %}
+{% block title %} Beginnings {% endblock %}
+
+{% block content %}
+<div class="text-center">
+	{% if not player %}
+		
+		<p> So.. </p>
+		<p> You decided to become a captain, did you? </p>
+		<p> That's not an easy way of life, you know? </p>
+		<p> But first things first.. </p>
+		<p> How should I call you now? </p>
+
+		<form action="{{ url_for('IndexView:post') }}" method="POST">
+			<button type="submit">Call me..</button>
+			<input type="text" name="name">
+		</form>
+
+	{% else %}
+		
+		<p> Ok, I will call you {{ player.name }}</p>
+		<p> And now for important issues.. </p>
+		<p> Why did you decide to become a captain? </p>
+		
+		<p> Maybe you are drawn in by adventure.. </p>
+		<p> Or you are running from law, possibly.. </p>
+		<p> You belive you can get rich this way? </p>
+
+	{% endif %}
+
+	
+
+	
+
+
+</div>
+{% endblock %}
+

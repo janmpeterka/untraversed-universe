@@ -9,7 +9,7 @@ migrate = Migrate()
 turbo = Turbo()
 
 from flask_sqlalchemy.model import DefaultMeta  # noqa: E402
- 
+
 BaseModel: DefaultMeta = db.Model
 
 
@@ -37,9 +37,9 @@ def create_app(config_name="default"):
     turbo.init_app(application)
 
     # CONTROLLERS
-    # from .controllers import register_all_controllers  # noqa: F401
+    from .controllers import register_all_controllers  # noqa: F401
 
-    # register_all_controllers(application)
+    register_all_controllers(application)
 
     # from .controllers import register_error_handlers  # noqa: F401
 

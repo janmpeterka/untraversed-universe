@@ -1,0 +1,93 @@
+/* general */
+.hidden {
+  display: none;
+}
+
+.visibility-hidden {
+	visibility: hidden;
+}
+
+.d-inline {
+	display: inline;
+}
+
+/* lists */
+.no-list {
+  list-style: none
+}
+
+/*.no-decoration {
+  text-decoration: none;
+}
+
+.no-decoration:hover {
+  text-decoration: none;
+}
+*/
+
+/* text - using Bootstrap*/
+
+/* fonts */
+.font-comfortaa {
+	font-family: 'Comfortaa';
+}
+
+.font-comfortaa-b {
+	font-family: 'Comfortaa';
+	font-weight: bold;
+}
+
+.font-comfortaa-bb {
+	font-family: 'Comfortaa';
+	font-weight: bolder;
+}
+
+/*.font-roboto {
+	font-family: 'Roboto';
+}*/
+
+.font-montserrat {
+	font-family: 'MontSerrat', serif;
+}
+
+
+.smaller {
+	font-size: smaller !important;
+}
+
+.text-larger {
+	font-size: larger !important;
+}
+
+.text-nobreak {
+	white-space: nowrap;
+}
+
+.text-overflow-break {
+	overflow-wrap: break-word;
+}
+
+/* Height */
+.h-5 {
+	height: 5rem
+}
+
+.lh-3 {
+	line-height: 3rem
+}
+
+/* Cursors */
+.cursor-default {
+	cursor: default;
+}
+
+.cursor-clickable {
+	cursor: pointer;
+}
+
+/* Animations */
+.with-fadeout {
+  animation: fadeOut 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}

@@ -1,0 +1,68 @@
+button.invisible-button {
+  background: none;
+  padding: 0px;
+  border: none;
+}
+
+input {
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+}
+
+
+.form-inline > * {
+ margin: 5px 3px;
+}
+
+form ul.errors li.warning{
+  color: var(--palette-orange);
+  font-weight: bold;
+}
+
+/*Add icons*/
+
+form button.icon {
+	background-color: transparent;
+	border: none;
+	transition: color 0.2s ease-out;
+}
+
+form button.icon i {
+	font-style: normal;
+}
+
+form button.destroy {
+	color: red;
+	border: 0px;
+	/*transition: color 0.2s ease-out;*/
+}
+
+form button.destroy:after {
+	content: '×';
+	font-size: 2rem;
+	font-weight: bolder;
+}
+
+form button.destroy:hover {
+	color: #af5b5e;
+}
+
+form button.change {
+	color: var(--pale-spring-bud-2);
+	/*transition: color 0.2s ease-out;*/
+}
+
+form button.change:after {
+	content: '✎';
+	font-size: 1.6rem;
+	font-weight: bolder;
+}
+
+form button.change:hover {
+	color: var(--dark-green);
+}
+
+
+form button.measurement:hover  {
+	display: block;
+}

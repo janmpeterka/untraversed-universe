@@ -1,0 +1,27 @@
+/* Base */
+/*@import "colors.css";*/
+/*@import "atomic.css";*/
+
+/*@import "texts.css";*/
+
+/* Elements  */
+/*@import "lists.css";*/
+/*@import "forms.css";*/
+/*@import "details.css";*/
+/*@import "footer.css";*/
+/*@import "tables.css";*/
+
+/* Functions */
+/*@import "icons.css";*/
+/*@import "flash.css";*/
+/*@import "turboflash.css";*/
+/*@import "animations.css";*/
+
+/* Other */
+/*@import "admin.css";*/
+/*@import "select2.css";*/
+
+
+body {
+  background-color: beige;
+}

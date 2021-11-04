@@ -1,0 +1,158 @@
+:root {
+    /* Old colors */
+    --error: #CC0000;
+    --success: #007E33;
+    --warning: #FF8800; 
+    --info: grey;
+    --debug: pink;
+
+    /*--icon_remove: #8b0000;*/
+    /*--icon_disapprove: #8b0000;*/
+    /*--icon_approve: #00C851;*/
+
+    --inactive: grey;
+    --inactive-bg: lightgrey;
+
+    /* Ketocalc colors */
+    /* From logo */
+    --logo-blue: #0177EA;
+    --logo-light-blue: #ABF2FD;
+    --logo-light-green: #D0E3D6;
+    --logo-white: #F8FEFF;
+
+    /* Added based on logo-blue*/
+    --palette-orange: #EA7401;
+    --palette-middle-blue: #2090FE;
+    --palette-purple: #0103EA;
+    --palette-cyan: #01EAE9;
+
+    /* Other */
+    --color-green: #2FAC03;
+
+    /* Kucharka colors */
+    --hunter-green: #386641ff;
+    --lapis-lazuli: #1c5d99ff;
+    --pale-spring-bud: #dde0bdff;
+    --pale-spring-bud-2: #d0d1acff;
+
+    /* Other colors */
+    --admin-yellow: #FFE766;
+    --color-light-grey: lightgrey;
+    --color-grey: #C1C2C4;
+}
+
+/* Colors */
+
+.color-dark-green {
+    color: var(--hunter-green);
+}
+
+.color-white {
+    color: white;
+}
+
+.color-red {
+    color: var(--error);
+}
+
+.color-light-blue {
+    color: var(--logo-light-blue);
+}
+
+.color-blue {
+    color: var(--logo-blue);
+}
+
+.color-light-green {
+    color: var(--logo-light-green);
+}
+
+.color-orange {
+    color: var(--palette-orange);
+}
+
+.color-purple {
+    color: var(--palette-purple);
+}
+
+.color-green {
+    color: var(--color-green);
+}
+
+.color-light-yellow {
+    color: var(--admin-yellow);
+}
+
+.color-light-greenish {
+    color: var(--pale-spring-bud);
+}
+
+
+/* Background colors */
+.bg-color-red {
+    background-color: var(--error);
+}
+
+.bg-color-light-blue {
+    background-color: var(--logo-light-blue);
+}
+
+.bg-color-blue {
+    background-color: var(--lapis-lazuli);
+}
+
+.bg-color-light-green {
+    background-color: var(--logo-light-green);
+}
+
+.bg-color-orange  {
+    background-color: var(--palette-orange);
+}
+
+.bg-color-purple {
+    background-color: var(--palette-purple);
+}
+
+.bg-color-dark-green {
+    background-color: var(--hunter-green);
+}
+
+.bg-color-grey {
+    background-color: var(--color-grey);
+}
+
+.bg-color-light-grey {
+    background-color: var(--color-light-grey);
+}
+
+.bg-color-light-yellow {
+    background-color: var(--admin-yellow);
+}
+
+.bg-color-light-greenish {
+    background-color: var(--pale-spring-bud);
+}
+
+.bg-color-light-red {
+    background-color: var(--palette-orange);
+}
+
+/* Color signals */
+.color-inactive{
+    color: var(--inactive);
+}
+
+.color-grey{
+    color: var(--inactive);
+}
+
+.color-success {
+    color: var(--success);
+}
+
+
+/* Effects */
+
+.opacity-50 {
+    opacity: 0.7;
+}

@@ -1,0 +1,9 @@
+/* icon cursor behavior */
+
+i:not(.disabled) {
+  cursor: pointer;
+}
+
+i.cursor-default {
+  cursor: default;
+}
