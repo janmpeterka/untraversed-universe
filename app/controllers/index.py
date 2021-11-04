@@ -5,6 +5,7 @@ from app.helpers.helper_flask_view import HelperFlaskView
 # from flask_classful import FlaskView
 
 from app.models.players import Player
+from app.models.qualities import Quality
 
 
 class IndexView(HelperFlaskView):
@@ -19,8 +20,13 @@ class IndexView(HelperFlaskView):
 
     def post(self):
         if "name" in request.form:
-            self.player = Player()
-            self.player.name = request.form["name"]
+            self.player = Player(name=request.form["name"])
             self.player.save()
 
-        return redirect(url_for("IndexView:index"))
+        if "background" in request.form:
+
+            if request.form["background"] == "law":
+                self.player.add_quality(Quality.load_by_category_and_name("Background", "Running from law"))
+                self.player.save()
+
+            return redirect(url_for("IndexView:index"))

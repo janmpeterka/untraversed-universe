@@ -16,7 +16,7 @@
 			<input type="text" name="name">
 		</form>
 
-	{% else %}
+	{% elif not player.qualities %}
 		
 		<p> Ok, I will call you {{ player.name }}</p>
 		<p> And now for important issues.. </p>
@@ -25,6 +25,16 @@
 		<p> Maybe you are drawn in by adventure.. </p>
 		<p> Or you are running from law, possibly.. </p>
 		<p> You belive you can get rich this way? </p>
+
+		<form action="{{ url_for('IndexView:post') }}" method="POST">
+			<select name="background">
+				<option value="law"> Running from law </option>
+			</select>
+			<button type="submit"> This is my reason </button>
+		</form>
+
+	{% elif not player.ship %}
+		<p> Ok, its' time to choose your ship </p>
 
 	{% endif %}
 
