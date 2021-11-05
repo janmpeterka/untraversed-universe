@@ -4,4 +4,8 @@
     | 
     
     <a href="{{ url_for('ShipView:index') }}" class="ms-2 me-2 {% if not player.ship %}visibility-hidden{% endif %}"> ship </a>
+
+    |
+
+    <a href="{{ url_for('PlayerView:delete_player') }}" class="float-end"> Začít od začátku </a>
 </div>

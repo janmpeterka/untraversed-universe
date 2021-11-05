@@ -22,7 +22,9 @@ def utility_processor():
 
 @application.before_first_request
 def fill_database():
-    from app.models.qualities import Quality
+    # from app.models.qualities import Quality
+    from app.models import Quality, Ship
 
-    print("Doing this only one time! ")
-    Quality.fill_database()
+    # print("Doing this only one time! ")
+    # Quality.fill_database()
+    # Ship.fill_database()

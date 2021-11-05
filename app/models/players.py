@@ -12,14 +12,22 @@ class Player(BaseModel, BaseMixin):
         "Quality",
         secondary="players_have_qualities",
         primaryjoin="Player.id == PlayerHasQuality.player_id",
-        # viewonly=True,
+        viewonly=True,
+    )
+
+    player_qualities = db.relationship(
+        "PlayerHasQuality",
+        cascade="all,delete",
     )
 
     ships = db.relationship(
         "Ship",
         secondary="players_have_ships",
         primaryjoin="Player.id == PlayerHasShip.player_id",
+        viewonly=True,
     )
+
+    player_ships = db.relationship("PlayerHasShip", cascade="all,delete")
 
     def add_quality(self, quality):
         from app.models.players_have_qualities import PlayerHasQuality
@@ -55,7 +63,9 @@ class Player(BaseModel, BaseMixin):
 
     @property
     def ship(self):
-        active_ships = [s for s in self.ships if s.is_active]
+        active_ships = [ps.ship for ps in self.player_ships if ps.is_active]
+
         if not active_ships:
             return None
+
         return active_ships[0]

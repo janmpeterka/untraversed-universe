@@ -11,6 +11,9 @@ class PlayerHasShip(BaseModel, BaseMixin):
     player_id = db.Column(db.ForeignKey("players.id"), nullable=False)
     ship_id = db.Column(db.ForeignKey("ships.id"), nullable=False)
 
+    player = db.relationship("Player", back_populates="player_ships")
+    ship = db.relationship("Ship")
+
     is_active = db.Column(db.Boolean, default=True)
 
     @staticmethod

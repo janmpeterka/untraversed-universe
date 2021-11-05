@@ -4,10 +4,12 @@
 {% block content %}
 
 <div class="text-center">
-	
 	{% if not player.ship %}
 
-		choose your ship:
+		<p> What good is a captain without a ship!</p>
+		<p> Luckily, I have something for you..</p>
+		<p> Don't worry, you will pay me in time.</p>
+		<p> Now,choose your ship: </p>
 
 		<form action="{{ url_for('ShipView:choose_ship') }}" method="POST" >
 			<select name="ship">
@@ -20,17 +22,19 @@
 		</form>
 
 	{% else %}
-		<h2> {{ player.ship }} </h2>
+		<h2> {{ player.ship.name }} </h2>
+		<h4> {{ player.ship.description }} </h4>
 
 		<hr>
 
 		<div>
 			<h3>Stats:</h3>
 			
-			Sensors: 2 		<br>
-			Firepower: 1 	<br>
-			Durability: 3 	<br>
-			Accomodation: 5 <br>
+			Sensors: {{ player.ship.sensors}} 		<br>
+			Firepower: {{ player.ship.firepower}} 	<br>
+			Durability: {{ player.ship.durability}} 	<br>
+			Accomodation: {{ player.ship.accomodation}} <br>
+			Speed: {{ player.ship.speed}} <br>
 			
 		</div>
 	{% endif %}

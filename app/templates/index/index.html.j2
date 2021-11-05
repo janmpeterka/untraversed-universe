@@ -2,6 +2,7 @@
 {% block title %} Beginnings {% endblock %}
 
 {% block content %}
+
 <div class="text-center">
 	{% if not player %}
 		
@@ -11,38 +12,12 @@
 		<p> But first things first.. </p>
 		<p> How should I call you now? </p>
 
-		<form action="{{ url_for('IndexView:post') }}" method="POST">
+		<form action="{{ url_for('IndexView:choose_name') }}" method="POST">
 			<button type="submit">Call me..</button>
 			<input type="text" name="name">
 		</form>
 
-	{% elif not player.qualities %}
-		
-		<p> Ok, I will call you {{ player.name }}</p>
-		<p> And now for important issues.. </p>
-		<p> Why did you decide to become a captain? </p>
-		
-		<p> Maybe you are <strong>drawn in by the adventure</strong>.. </p>
-		<p> Or you are <strong>running from law</strong>, possibly.. </p>
-		<p> You belive you can <strong>get rich</strong> this way? </p>
-
-		<form action="{{ url_for('IndexView:post') }}" method="POST">
-			<select name="background">
-				<option value="law"> Running from law </option>
-			</select>
-			<button type="submit"> This is my reason </button>
-		</form>
-
-	{% elif not player.ship %}
-		<p> Ok, its' time to choose your ship </p>
-
 	{% endif %}
-
-	
-
-	
-
-
 </div>
-{% endblock %}
 
+{% endblock %}
