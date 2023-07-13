@@ -2,6 +2,7 @@ import random
 from app import db, BaseModel
 from app.helpers.base_mixin import BaseMixin
 from app.presenters.base import BasePresenter
+from flask import g
 
 
 class Location(BaseModel, BaseMixin, BasePresenter):
@@ -19,6 +20,9 @@ class Planet(Location):
     coordinate_y = db.Column(db.Integer)
     coordinate_z = db.Column(db.Integer)
 
+    discovered_by = db.Column(db.Integer, db.ForeignKey("players.id"))
+    discoverer = db.relationship("Player", foreign_keys=[discovered_by])
+
     __mapper_args__ = {"polymorphic_identity": "planet"}
 
     nodes = db.relationship(
@@ -29,7 +33,7 @@ class Planet(Location):
 
     @staticmethod
     def generate():
-        planet = Planet()
+        planet = Planet(discoverer=g.current_player)
         planet.name = f"Planet {random.randint(1, 1000)}"
         planet.save()
 

@@ -1,7 +1,7 @@
 import inspect
 import re
 
-from flask import abort
+from flask import abort, g
 from flask import render_template as template
 
 from flask_classful import FlaskView
@@ -15,6 +15,7 @@ class HelperFlaskView(FlaskView):
         from app.models.players import Player
 
         self.player = Player.load_first()
+        g.current_player = self.player
 
         if not self.player:
             if not getattr(self, "is_index", False):
