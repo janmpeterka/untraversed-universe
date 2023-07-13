@@ -1,0 +1,18 @@
+{% extends "base.html.j2" %}
+{% block title %} Planet {{ planet.name }} {% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+  <h1> Welcome on {{planet.name}} </h1>
+
+  <h3>locations:</h3>
+  {% for node in planet.nodes %}
+    <a href="{{ node.url }}">{{ node.name }}</a>
+  {% endfor %}
+
+</div>
+  
+{% endblock %}
+
+

@@ -16,4 +16,8 @@ class ShipView(HelperFlaskView):
     def choose_ship(self):
         self.player.add_ship(Ship.load(request.form["ship"]))
 
+        from app.models import Planet
+
+        self.player.move_to(Planet.generate())
+
         return redirect(url_for("ShipView:index"))

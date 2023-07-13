@@ -7,6 +7,7 @@ from flask import current_app as application
 from sqlalchemy.sql import func
 
 from sqlalchemy.exc import DatabaseError
+
 # from sqlalchemy.ext.hybrid import hybrid_property
 
 from app import db
@@ -157,42 +158,3 @@ class BaseMixin(object):
             db.session.rollback()
             application.logger.error("Refresh error: {}".format(e))
             return False
-
-    # PROPERTIES
-
-    # def is_author(self, user) -> bool:
-    #     if hasattr(self, "author"):
-    #         return self.author == user  # type: ignore
-    #     else:
-    #         return False
-
-    # @property
-    # def is_current_user_author(self) -> bool:
-    #     return self.is_author(current_user)
-
-    # @hybrid_property
-    # def is_public(self) -> bool:
-    #     if hasattr(self, "is_shared"):
-    #         return self.is_shared  # type: ignore
-    #     else:
-    #         return False
-
-    # # PERMISSIONS
-    # def can_view(self, user) -> bool:
-    #     return (
-    #         self == user  # for User
-    #         or self.is_public
-    #         or self.is_author(user)
-    #         or getattr(user, "is_admin", False)
-    #     )
-
-    # @property
-    # def can_current_user_view(self) -> bool:
-    #     return self.can_view(user=current_user)
-
-    # def can_edit(self, user) -> bool:
-    #     return self == user or self.is_author(user) or getattr(user, "is_admin", False)
-
-    # @property
-    # def can_current_user_edit(self) -> bool:
-    #     return self.can_edit(user=current_user)

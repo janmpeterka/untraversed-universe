@@ -29,6 +29,13 @@ class Player(BaseModel, BaseMixin):
 
     player_ships = db.relationship("PlayerHasShip", cascade="all,delete")
 
+    current_location_id = db.Column(db.Integer, db.ForeignKey("locations.id"))
+    current_location = db.relationship("Location")
+
+    def move_to(self, location):
+        self.current_location = location
+        self.edit()
+
     def add_quality(self, quality):
         from app.models.players_have_qualities import PlayerHasQuality
 

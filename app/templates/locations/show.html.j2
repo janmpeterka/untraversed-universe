@@ -1,0 +1,22 @@
+{% extends "base.html.j2" %}
+{% block title %} Location {% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+  {{ location.name }}
+
+  <h3>locations:</h3>
+  {% for node in location.nodes %}
+    <a href="{{ url_for('LocationView:show', id=node.id) }}">{{ node.name }}</a>
+  {% endfor %}
+
+  <h3>buildings:</h3>
+  {% for building in location.buildings %}
+    <a href="{{ url_for('LocationView:show', id=building.id) }}">{{ building.name }}</a>
+  {% endfor %}
+</div>
+  
+{% endblock %}
+
+

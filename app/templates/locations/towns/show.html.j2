@@ -1,0 +1,18 @@
+{% extends "base.html.j2" %}
+{% block title %} Town {{ town.name }} {% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+  <h1> You have entered {{town.name}} </h1>
+
+  <h3>buildings:</h3>
+  {% for building in town.buildings %}
+    <a href="{{ building.url }}">{{ building.name }}</a>
+  {% endfor %}
+
+</div>
+  
+{% endblock %}
+
+
