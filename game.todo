@@ -1,0 +1,44 @@
+# Vision:
+
+## Multilevel **Locations/Places** (planet, deep ravine, town, blacksmith)
+  - random generated
+	- every Location has Traits and Conditions:
+		- Planet > Traits > Breathable air (bool)
+		- Town > Conditions > Planet(parent)/Breathable air
+	- you can travel between locations
+		- Planet -> Planet - need fuel and time
+		- on planet surface - idk now - time, fuel, device/public transport?
+
+## Inventory
+- items give you qualities, but you can lose/use them.
+
+## Every Location/Place has **Opportunities**
+  Opportunity has Conditions, which may be:
+    - date/time
+    - player quality
+    - ship quality
+    - something else
+  and Effects, which are:
+    - change of Player/Ship/Crew Quality
+
+  examples:
+    Deep ravine:
+     - Explore surface
+     - Explore depth (needs Quality: Light source and Quality: Deep dive)
+      - Ligh source - buy lightsticks (one use), flashligh (longterm), get Glowing mutation
+     - Scan for valuables (needs Quality)
+
+
+## Crew
+You can have crew on your ship of course
+
+## Events
+  Events happen separately.
+  They have a **Trigger** and **Conditions**:
+  - Mutiny:
+    - Conditions:
+      - player is on the ship
+      - unhappy crew members have more firepower/cunning than happy ones
+    - Trigger:
+      - happiness of two crew members falls under 50%
+
