@@ -14,6 +14,6 @@ class ShipView(HelperFlaskView):
 
     @route("choose_ship", methods=["POST"])
     def choose_ship(self):
-        self.player.add_ship(Ship.load_by_name(request.form["ship"]))
+        self.player.add_ship(Ship.load(request.form["ship"]))
 
         return redirect(url_for("ShipView:index"))

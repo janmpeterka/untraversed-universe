@@ -15,9 +15,9 @@ def utility_processor():
         except Exception:
             raise NotImplementedError("This object link_to is probably not implemented")
 
-    return dict(
-        link_to=link_to,
-    )
+    from app.models import models_dict
+
+    return dict(link_to=link_to, **models_dict)
 
 
 # @application.before_first_request
@@ -26,5 +26,5 @@ def utility_processor():
 #     from app.models import Quality, Ship
 
 #     # print("Doing this only one time! ")
-#     # Quality.fill_database()
+# Quality.fill_database()
 #     # Ship.fill_database()

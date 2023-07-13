@@ -3,3 +3,13 @@ from .qualities import Quality
 from .players_have_qualities import PlayerHasQuality
 from .ships import Ship
 from .players_have_ships import PlayerHasShip
+
+__all__ = ["Player", "Quality", "PlayerHasQuality", "Ship", "PlayerHasShip"]
+
+models_dict = {
+    "Player": Player,
+    "Quality": Quality,
+    "PlayerHasQuality": PlayerHasQuality,
+    "Ship": Ship,
+    "PlayerHasShip": PlayerHasShip,
+}

@@ -9,14 +9,13 @@
 		<p> What good is a captain without a ship!</p>
 		<p> Luckily, I have something for you..</p>
 		<p> Don't worry, you will pay me in time.</p>
-		<p> Now,choose your ship: </p>
+		<p> Now, choose your ship: </p>
 
 		<form action="{{ url_for('ShipView:choose_ship') }}" method="POST" >
 			<select name="ship">
-				<option name="Flea"> Flea </option>
-				<option name="Bumblebee"> Bumblebee </option>
-				<option name="Moth"> Moth </option>
-				<option name="Wasp"> Wasp </option>
+				{% for ship in Ship.load_all() %}
+					<option name="{{ship.name}}" value={{ship.id}}> {{ship.name}} ({{ship.description}})  </option>
+				{% endfor %}
 			</select>
 			<button type="submit"> I want this! </button>
 		</form>
