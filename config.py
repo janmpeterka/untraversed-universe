@@ -36,7 +36,7 @@ class TestConfig(Config):
 
 class DevConfig(LocalProdConfig):
     TEMPLATES_AUTO_RELOAD = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get("LOCAL_DB_STRING")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DB_STRING")
     SENTRY_MONITORING = False
 
     INFO_USED_DB = "local db"
